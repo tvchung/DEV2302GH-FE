@@ -1,0 +1,27 @@
+----- FrontEnd - ReactJS (72h)
+Phần 1: Tổng quan về lập trình FrontEnd (36h)
+    - HTML5 (2-3)
+    - CSS3 (2-3)
+        ----------------- webpage (website): 
+            [https://drive.google.com/drive/folders/13_1LJUNOWSKRfrLvMMXfPhB4nU_BGE9v ]
+    - Javascript (2-3)
+    - Jquery (1)
+    - Bootstrap(1)
+    - Cắt ghép giao diện web (1)
+        (.psd, .ai, .xd, figma,...) => .html
+    ---- x3, x4 => Làm việc
+    ==> Project FE: 
+        - slick
+        - wow
+        .... 
+    -------------------
+    Tài liệu:
+        1. slide (nên đọc trước)
+        2. Labguide (luyện tập)
+        3. Books (400)
+    Edit:
+        - Visual code 2019
+    ==> Hoàn thành (ít nhất project -> 
+        Deployed -> devmaster => Chứng nhận hoàn thành)
+
+Phần 2: ReactJS  (36h)
