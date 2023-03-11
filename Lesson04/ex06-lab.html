@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ với chuyên gia</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            margin: 1rem 15%;
+            display: flex;
+        }
+        .col{
+            margin: 0 15px;
+            width: 50%;
+        }
+        img{
+            width: 100%;
+        }
+        .form-group{
+            margin: .5rem 0;
+        }
+        .form-control,textarea {
+            width: 100%;
+            padding: .25rem;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            outline: none;
+        }
+        .form-control:focus,textarea:focus{
+            border: 1px solid #00A2E0;
+        }
+        .btn{
+            padding: .25rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0;
+            background-color: #00A2E0;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="formLienHe">
+        <form id="frmLienHe" name="frmLienHe" action="">
+            <div class="container">
+                <div class="col">
+                    <h3>Liên hệ ngay với chuyên gia của chúng tôi</h3>
+                    <div class="form-group">
+                        <input type="text" name="hoTen" id="hoTen" class="form-control" placeholder="Họ tên">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="dienThoai" id="dienThoai" class="form-control" placeholder="Điện thoại">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="diaChi" id="diaChi" class="form-control" placeholder="Địa chỉ">
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="noiDung" id="noiDung" cols="30" rows="8">Nội dung</textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group " style="text-align: right;">
+                        <input type="submit" value="Gửi liên hệ" class="btn">                        
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/img-lien-he.png" alt="Liên hệ">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
