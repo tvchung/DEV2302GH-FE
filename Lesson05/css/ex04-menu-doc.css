@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    margin: 2rem;
+    width: 200px;
+    border: 1px solid red;
+}
+nav ul {
+    list-style: none;
+}
+nav ul a img{
+    height: 22px;
+    width: 22px;
+    padding-right: .5rem;
+}
+nav ul a{
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+}
+nav ul a:hover{
+    background-color: red;
+    color: #fff;
+}
+nav ul a:hover img{
+    filter:   brightness(0) invert(1);
+}
+nav .danh-muc{
+    padding:.5rem ;
+    display: flex;
+    align-items: center;
+}
+nav .danh-muc div>span{
+    display: block;
+    width: 22px;
+    background-color: red;
+    height: 4px;
+    margin:.2rem 0;
+}
+nav .danh-muc h4{
+    padding-left: .5rem;
+}
+nav .danh-muc {
+    border-bottom: 1px solid #ccc;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cú pháp tương tác của css trên html</title>
+    <style>
+        /* 1. Tương tác thông qua tên thẻ html  */
+        h2{
+            color: blue;
+        }
+        body{
+            background-color: cyan;
+        }
+        /* 2. Tương tác thông qua thuộc tính id của phần tử html */
+        #zone1 {
+            margin: 1rem;
+            border: 2px solid #ddd;
+        }
+        /* 3. Tương tác thông qua thuộc tính class của phần tử html  */
+        .title {
+            font-size: 1.25rem;
+            color: red;
+        }
+        .container {
+            margin: .5rem 1.5rem;
+            padding: .5rem;
+            border: 2px solid red;
+        }
+        .noi-dung {
+            color: green;
+        }
+        p.bg-p{
+            background-color: #ccc;
+        }
+
+        /* 4. Tương tác thông qua giá trị của thuộc tính   */
+        div[class="div1"]{
+            background-color: green;
+        }
+        input[type="text"]{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Cú pháp tương tác của css trên html</h1>
+        <hr>
+        <pre>
+            1. Tương tác thông qua tên thẻ html 
+            2. Tương tác thông qua thuộc tính id của phần tử html
+            3. Tương tác thông qua thuộc tính class của phần tử html 
+            4. Tương tác thông qua giá trị của thuộc tính  
+        </pre>
+    </section>
+    <section>
+        <h2>1. Tương tác thông qua tên thẻ html </h2>
+    </section>
+    <section id="zone1">
+        <h2>2. Tương tác thông qua thuộc tính id của phần tử html</h2>
+    </section>
+    <section id="zone2" class="container bg-p">
+        <h2 class="title">3. Tương tác thông qua thuộc tính class của phần tử html </h2>
+        <p class="noi-dung bg-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores amet qui magnam rerum ab porro officia commodi alias laborum illo aliquid, excepturi eius quis accusantium dolores, vel a nihil voluptatum?</p>
+        <p class="noi-dung">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consectetur ab. Quisquam libero, qui, unde nihil hic omnis neque fugiat natus corporis cumque dolor! Aspernatur fugit provident optio asperiores. Neque.
+        </p>
+    </section>
+    <section id="zone3" class="container">
+        <h2> 4. Tương tác thông qua giá trị của thuộc tính</h2>
+        <div class="div1">
+            Nội dung 1
+        </div>
+        <div class="div2">
+            Nội dung 2
+        </div>
+        <div class="div1">
+            Nội dung 3
+        </div>
+        <div>
+            <input type="text" name="txt1" id="txt1">
+            <br>
+            <input type="text" name="txt2" id="txt2">
+            <br>
+            <input type="checkbox" name="chk" id="chk">
+            <br>
+            <input type="submit" value="Submit">
+        </div>
+    </section>
+</body>
+</html>
