@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review CSS</title>
+    <link rel="stylesheet" href="css/font.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #zone1{
+            margin: 1rem;
+        }
+        h2{
+            display: inline-block;
+            font-family: "UTM AvoBold";
+            padding: 1rem 0;
+            font-size: 2.3rem;
+            position: relative;
+        }
+        h2 span{
+            color: #00b3cb;
+        }
+        h2::before{
+            content: "";
+            position: absolute;
+            top: calc(100% - 1rem);
+            width: 20%;
+            height: 4px;
+            background-color:#00b3cb ;
+        }
+        h2::after{
+            content: "";
+            position: absolute;
+            top: calc(100% - 1rem);
+            right: 0;
+            width: 78%;
+            height: 4px;
+            background-color:#00b3cb ;
+        }
+        p{
+            font-family: "UTM Avo";
+            font-size: .75rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <section id="zone1">
+        <h2>Sứ mệnh của <span>Robotic</span> </h2>
+        <div>
+            <p>
+                Có một ví dụ rất thú vị: máy phay CNC 3 trục có hệ thống điều khiển rất giống với cánh tay rô-bốt nhưng nó vẫn thường được gọi là một cái máy. Rõ ràng, việc có tay hay chân của rô-bốt đã tạo ra sự khác biệt giữa các loại máy móc. Tuy nhiên, việc có hình dáng giống người chưa đủ cơ sở để khẳng định một máy móc là rô-bốt. Rô-bốt là một loại máy có khả năng thực hiện được một công việc nào đó cho dù công việc đó có hiệu quả hay không. Vì vậy, một con rô-bốt đồ chơi trẻ em bằng nhựa dù có hình dạng giống Asimo nhưng không bao giờ là một rô-bốt.
+            </p>
+        </div>
+    </section>
+</body>
+</html>

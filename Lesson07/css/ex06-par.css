@@ -1,0 +1,132 @@
+html,body{
+    font-size: 16px;
+}
+
+img{
+    width: 100%;
+    border-radius: 5px;
+    display: block;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.item {
+    margin: .5rem;
+    padding: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position: relative;
+}
+.item span {
+    display: block;
+    position: absolute;
+    top:.5rem;
+    left: .5rem;
+    border-bottom-right-radius: 75%;
+    background-color: rgba(204, 218, 8, 0.75);
+}
+@media (max-width: 419.98px) {
+    body{
+        background-color: black;
+    }
+    .container{
+        margin:1rem .3rem;
+    }
+    .col{
+        width: 100%;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 575.98px) {
+    body{
+        background-color: yellow;
+    } 
+    .container{
+        margin: 1rem;
+    }
+    .col{
+        width: 50%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body{
+        background-color: blue;
+    }
+    .container{
+        margin: 1rem 1.5rem;
+    }
+    .col{
+        width: 50%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body{
+        background-color: purple;
+    }
+    .container{
+        margin:1rem 2rem;
+    }
+    .col{
+        width: 33.333333%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body{
+        background-color: green;
+    }
+    .container{
+        margin:1rem 2.5rem;
+    }
+    .col{
+        width: 25%;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+    body{
+        background-color: orange;
+    }
+    .container{
+        margin: 1rem 3rem;
+    }
+    .col{
+        width: 25%;
+    }
+}
+@media (min-width: 1400) and (max-width: 1599.98px) {
+    body{
+        background-color: rgb(112, 14, 14);
+    }
+    .container{
+        margin:1rem 2rem;
+    }
+    .col{
+        width: 20%;
+    }
+}
+@media (min-width: 1600) and (max-width: 1919.98px) {
+    body{
+        background-color: rgb(44, 83, 104);
+    }
+    .container{
+        margin: 1rem 2rem;
+    }
+    .col{
+        width: 16.666667%;
+    }
+}
+@media (min-width: 1920)  {
+    body{
+        background-color: rgb(112, 33, 59);
+    }
+    .container{
+        margin: 1rem 3rem;
+    }
+    .col{
+        width: 16.666667%;
+    }
+}
