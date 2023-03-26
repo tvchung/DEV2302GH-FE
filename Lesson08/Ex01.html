@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cú pháp tương tác của Js với HTML</title>
+</head>
+<body>
+    <section>
+        <h1>Cú pháp tương tác của Js với HTML</h1>
+        <pre>
+            - inline (thuộc tính sự kiện của phần tử)
+            - internal (viết lệnh xử lý trong cặp thẻ script)
+            - external (viết lệnh js trong file .js)
+        </pre>
+    </section>
+    <section id="zone1">
+        <h2>inline (thuộc tính sự kiện của phần tử)</h2>
+        <button onclick="alert('clicked')">Click here</button>
+    </section>
+    <section id="zone2">
+        <h2>internal (viết lệnh xử lý trong cặp thẻ script)</h2>
+        <p>
+            - Nên đặt trong phần head
+            - Tuy nhiên có thể viết cuối trang, trước thẻ đóng body 
+        </p>
+        <button onclick="fn_Click()"> Tag script</button>
+    </section>
+    <section id="zone3">
+        <h2>external (viết lệnh js trong file .js)</h2>
+        <p>
+            - Viết mã lệnh javacript trong file .js 
+            - Nhúng file js vào html thông qua thẻ script 
+            - Nên đặt cuối trang, trước thẻ đóng body 
+        </p>
+        <button onclick="fn_ClickHere()">External File (.js)</button>
+    </section>
+
+    <script>
+        function fn_Click(){
+            document.bgColor="green";
+            document.body.style.color="Blue";
+        }
+    </script>
+    <script src="js/Ex01.js"></script>
+</body>
+</html>
