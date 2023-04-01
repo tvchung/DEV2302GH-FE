@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính số ngày trong tháng / năm</title>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Tính số ngày trong tháng / năm</h1>
+        <pre>
+            - Thiết kế form
+                + input: nhập tháng
+                + input: nhập năm 
+                + button: Tính ngày 
+                + input: hiển thị kết quả số ngày trong tháng năm
+        </pre>
+    </section>
+    <section>
+        <form action="" name="frmTinhSoNgay">
+            <div>
+                <label for="thang">Tháng</label>
+                <input type="number" name="thang" id="thang">
+            </div>
+            <div>
+                <label for="nam">Năm</label>
+                <input type="number" name="nam" id="nam">
+            </div>
+            <div>
+                <label for=""></label>
+                <input type="button" name="btnTinh" id="btnTinh" onclick="tinhSoNgay()">
+            </div> 
+            <div>
+                <label for="soNgay">Số ngày</label>
+                <input type="text" name="soNgay" id="soNgay">
+            </div>
+        </form>
+    </section>
+    <script>
+        // 15'
+        function tinhSoNgay(){
+            // lấy giá trị trên form 
+                let thang=parseInt(frmTinhSoNgay.thang.value);
+                let nam=parseInt(frmTinhSoNgay.nam.value);
+                let soNgay=0;
+            // sử dụng switch để xem xét tháng, nam => số ngày
+                switch(thang){
+                    case 1:
+                    case 3: 
+                    case 5: 
+                    case 7:
+                    case 8: 
+                    case 10: 
+                    case 12: 
+                        soNgay=31;
+                        break;
+                    case 4: 
+                    case 6: 
+                    case 9: 
+                    case 11: 
+                        soNgay=30;
+                        break;
+                    case 2: 
+                        if(nam % 4 == 0  && nam % 100 !=0){
+                            soNgay = 29;
+                        }else{
+                            soNgay = 28;
+                        }
+                        break;
+                    default:
+                        alert("Bạn nhập sai...");
+                }
+            // hiển thị
+            if(soNgay >0){
+                frmTinhSoNgay.soNgay.value = "Tháng " + thang + " năm " + nam + " có " + soNgay +" ngày!"
+            }
+        }
+    </script>
+</body>
+</html>

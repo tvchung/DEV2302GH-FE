@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giải phương trình bậc 1</title>
+  </head>
+  <body>
+    <h1>Giải phương trình bậc 1</h1>
+    <form action="" name="frm">
+      <div>
+        <label for="soA">a:</label>
+        <input type="number" name="soA" id="soA" />
+      </div>
+      <div>
+        <label for="soB">b:</label>
+        <input type="number" name="soB" id="soB" />
+      </div>
+      <div>
+        <button type="button" onclick="giaiPT()">Giải phương trình</button>
+      </div>
+      <div>
+        <label for="ketQua">Kết quả:</label>
+        <input type="text" name="ketQua" id="ketQua" />
+      </div>
+    </form>
+    <script>
+      function giaiPT() {
+        a = frm.soA.value; // chuỗi (số)
+        b = frm.soB.value; // chuỗi (số)
+        a = parseFloat(a); // số thực a
+        b = parseFloat(b);
+        if (a == 0) {
+          if (b == 0) {
+            frm.ketQua.value="pt vo số nghiệm";
+          } else {
+            frm.ketQua.value="pt vô nghiệm";
+          }
+        } else {
+          let x = -b / a;
+          frm.ketQua.value="Nghiệm pt x=" + x;
+        }
+      }
+    </script>
+  </body>
+</html>
