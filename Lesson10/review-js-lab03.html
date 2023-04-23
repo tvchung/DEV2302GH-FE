@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc số thành tiếng việt</title>
+</head>
+<body>
+    <section>
+        <h1>Đọc số thành tiếng việt</h1>
+        <pre>
+            1. Thiết kế form 
+                + Nhập một số nguyên có 2 chữ số 
+                + Đọc thành tiếng việt
+                    ví dụ: 
+                    10 -> mười
+                    15 -> mười lăm 
+                    33 -> ba mươi ba 
+                    20 -> hai mươi 
+            * gợi ý:
+            num =15 =>
+                chuc = num/10 (chia lấy phần nguyên )// 15/10 = 1
+                donVi = num % 10; // 15 % 10 = 5
+
+            ==> phát triển thêm đọc một số có 3 chữ số ?
+        </pre>
+    </section>
+    <form  id="frm" name="frm" action="">
+        <div>
+            <label for="num">Nhập một số có 2 chữ số:</label>
+            <input type="number" name="num" id="num" min="10" max="99" value="15">
+        </div>
+        <div>
+            <label for=""></label>
+            <input type="button" value="Đọc số" onclick="fn_DocSo();">
+        </div>
+        <div>
+            <input type="text" name="result" id="result" style="width:100%" >
+        </div>
+    </form>
+    <script>
+        const fn_DocSo = ()=>{
+            // lấy giá trị trên form
+            let num = frm.num.value;
+            num = parseInt(num);
+            let chuc= parseInt(num/10); // 15/10 => 1
+            let donVi = num % 10; // 15 % 10 => 5
+            let strResult ="";
+            // frm.result.value = donVi;
+            // đọc hàng chục
+            switch(chuc){
+                case 1:
+                    strResult = "mười "; break;
+                case 2:
+                    strResult = "hai "; break;
+                case 3:
+                    strResult = "ba "; break;
+                case 4:
+                    strResult = "bốn "; break;
+                case 5:
+                    strResult = "năm "; break;
+                case 6:
+                    strResult = "sáu "; break;
+                case 7:
+                    strResult = "bảy "; break;
+                case 8:
+                    strResult = "tám "; break;
+                case 9:
+                    strResult = "chín "; break;
+            }
+            // đọc hàng đơn vị
+            if(chuc>1){
+                strResult +="mươi ";
+            }
+            switch(donVi){
+                case 0: 
+                    break;
+                case 1:
+                    if(chuc > 1){
+                        strResult += "mốt ";
+                    }else{
+                        strResult += "một ";
+                    }
+                     break;
+                case 2:
+                    strResult += "hai "; break;
+                case 3:
+                    strResult += "ba "; break;
+                case 4:
+                    strResult += "bốn "; break;
+                case 5:
+                    strResult += "lăm "; break;
+                case 6:
+                    strResult += "sáu "; break;
+                case 7:
+                    strResult += "bảy "; break;
+                case 8:
+                    strResult += "tám "; break;
+                case 9:
+                    strResult += "chín "; break;
+            }
+            // in kết quả
+            frm.result.value=strResult;
+        }
+    </script>
+</body>
+</html>

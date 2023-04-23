@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For ---</title>
+  </head>
+  <body>
+    <h1>In dãy số chẵn lẻ</h1>
+    <form id="frm" name="frm" action="">
+      <div>
+        <label for="num">Nhập một số:</label>
+        <input type="number" name="num" id="num" min="10" max="99" value="15" />
+      </div>
+      <div>
+        <label for=""></label>
+        <input type="button" value="In" onclick="fn_Print();" />
+      </div>
+      <div>
+        <input type="text" name="chan" style="width: 100%" />
+        <input type="text" name="le" style="width: 100%" />
+      </div>
+    </form>
+    <script>
+      const fn_Print = () => {
+        n = eval(frm.num.value);
+        chan = "";
+        le = "";
+        for (i = 0; i < n; i++) {
+          if (i % 2 == 0) {
+            chan += i + ", ";
+          } else {
+            le += i + ", ";
+          }
+        }
+        frm.chan.value ="Chẵn:" + chan;
+        frm.le.value = "Lẻ:" + le;
+      };
+    </script>
+  </body>
+</html>

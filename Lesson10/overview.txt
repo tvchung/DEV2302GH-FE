@@ -1,0 +1,8 @@
+cấu trúc lặp trong Javascript
+1. for (4 dạng )
+
+2. while
+
+3. do ... while 
+
+4. for .. in (forEach)

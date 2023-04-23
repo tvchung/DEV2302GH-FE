@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinh giá trị ngẫu nhiên trong khoảng </title>
+</head>
+<body>
+    <h1>Sinh giá trị ngẫu nhiên trong khoảng </h1>
+    <hr>
+    <pre>
+        - Sinh ra mảng gồm 5 phần tử giá trị nguyên trong khoảng 10-99;
+        - Các giá trị không trùng nhau
+        + Math.random 
+
+    </pre>
+    <script>
+        var arr=[];
+        const kiemTra =(num)=>{
+            if(arr.length == 0) return false;
+            for(let i=0; i<arr.length ; i++){
+                if(arr[i]==num){
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        const sinhNgauNhien = () =>{
+           do{
+               // sinh ra 1 số nguyên có 2 chữ số
+               let num = parseInt(Math.random()*89) + 10;
+               let flag = kiemTra(num); // true: tồn tại trong mảng || false: ko tồn tại;
+               if(flag == false){
+                   arr.push(num);
+               }
+
+           }while(arr.length < 89)
+
+           console.log('====================================');
+           console.log(arr);
+           console.log('====================================');
+        }
+        sinhNgauNhien();
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Information</title>
+</head>
+<body>
+    <div id="formLogin">
+        <form id="frmLogin" name="frmLogin" method="post">
+            <div class="form-group">
+                <img src="https://devmaster.edu.vn/images/logo.png" alt="Devmaster Academy">
+            </div>
+            <div class="form-group">
+                <label for="taiKhoan">Tài khoản</label>
+                <div>
+                    <input type="text" name="taiKhoan" id="taiKhoan" class="form-control">
+                    <span id="errTaiKhoan" class="error-message">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="matKhau">Mật khẩu</label>
+                <div>
+                    <input type="password" name="matKhau" id="matKhau" class="form-control">
+                    <span id="errMatKhau" class="error-message">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=" "> </label>
+                <div>
+                    <input type="checkbox" name="chkGhiNho" id="chkGhiNho">
+                    <label for="chkGhiNho">Ghi nhớ</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""> </label>
+                <div>
+                    <input type="submit" 
+                        name="btnDangNhap" id="btnDangNhap" value="Đăng nhập" 
+                        class="btn btn-primary"
+                        onclick="return fn_CheckLogin()">
+                    <input type="reset" value="Làm lại" id="btnLamLai" name="btnLamLai" class="btn btn-secondary">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // check form
+        const fn_CheckLogin = ()=>{
+            let flag=true;
+            let taiKhoan = document.getElementById("taiKhoan").value;
+            if(taiKhoan==""){
+                flag=false;
+                document.getElementById("errTaiKhoan").innerText="Bạn chưa nhập tài khoản";
+            }else{
+                document.getElementById("errTaiKhoan").innerText="OK";
+            }
+
+            let matKhau = document.getElementById("matKhau").value;
+            if(matKhau == ""){
+                flag=false;
+                document.getElementById("errMatKhau").innerText="Bạn chưa nhập mật khẩu";
+            }else{
+                document.getElementById("errMatKhau").innerText="OK";
+            }
+
+            if(flag==true)
+                alert("Thành công");
+            return false;
+        }
+    </script>
+
+    <hr/>
+    <pre>
+        - tạo form Login
+            + tài khoản:
+            + mật khẩu:
+            + ghi nhớ
+            + nút lệnh : Đăng nhập 
+        - Viết kịch bản script cho sự kiện khi người dùng đăng nhập:
+            + tài khoản: không được để trống
+            + mật khẩu không được để trống 
+            ==> các thông báo được hiển thị bên cạnh điều khiển 
+        - sử dụng DOM
+    </pre>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Giải bái toán theo yêu cầu sau:</h1>
+    <pre>
+        + Thiết kế form 
+            - input: nhập số nguyên dương n 
+            - output: (text):
+                + dãy số nguyên 1-> n; tính tổng 
+                    n=5;
+                    => 1+2+3+4+5 = 15
+                + dãy số nguyên tố [1-n]; tính tổng 
+                    n=10;
+                    => 1+2+3+5+7 = 18
+                + dãy số chính phương [1-n]; tính tổng
+                    n=30;
+                    => 4+9+16+25 = 45
+    </pre>
+    <form id="frm" name="frm" action="">
+        <div>
+          <label for="num">Nhập một số:</label>
+          <input type="number" name="num" id="num" min="10" max="99" value="15" />
+        </div>
+        <div>
+          <label for=""></label>
+          <input type="button" value="In" onclick="fn_Tinh();" />
+        </div>
+        <div>
+          <input type="text" name="res1" style="width: 80%" />
+          <input type="text" name="res2" style="width: 100%" />
+          <input type="text" name="res3" style="width: 100%" />
+        </div>
+      </form>
+      <script>
+          const fn_Tinh = ()=>{
+              let num = eval(frm.num.value);
+              let res ="";
+              let tong=0;
+              for(let i =1; i<num; i++){
+                res += i + "+";
+                tong +=i;
+              }
+              res = res.substr(0,res.length-1);
+              frm.res1.value = res +"="+tong;
+              
+              tong=0;
+              res="";
+              for(let i =1; i<num; i++){
+                  if(fn_CheckNT(i)==true){
+                    res += i + "+";
+                    tong +=i;
+                  }
+              }
+              res = res.substr(0,res.length-1);
+              frm.res2.value = res +"="+tong;
+
+              // dãy số chính phương
+              tong=0;
+              res="";
+              for(let i =1; i<num; i++){
+                  if(fn_CheckCP(i)==true){
+                    res += i + "+";
+                    tong +=i;
+                  }
+              }
+              res = res.substr(0,res.length-1);
+              frm.res3.value = res +"="+tong;
+              
+          }
+
+          // Hàm kiểm tra số nguyên tố
+          const fn_CheckNT = (num)=>{
+            if(num <=2) return true;
+            for(let i=2; i<= parseInt(num/2); i++){
+                if(num % i == 0){
+                    return false;
+                }
+            }
+            return true;
+          }
+          // Hàm kiểm tra số chính phương
+          const fn_CheckCP =(num)=>{
+            if(num==1) return true;
+            for(let i=2; i<=parseInt(num/2); i++){
+              if(i*i == num ){
+                return true;
+              }
+            }
+            return false;
+          }
+      </script>
+</body>
+</html>

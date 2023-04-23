@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tương tác của DOM với các phần tử HTML</title>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Cú pháp tương tác của DOM với các phần tử HTML</h1>
+        <hr/>
+        <pre>
+            1. Tương tác thông qua thuộc tính id
+                document.getElementById 
+            2. Tương tác thông qua tên thẻ HTML 
+                document.getElementsByTagName 
+            3. Tương tác thông qua thuộc tính class của phẩn tử HTML 
+                document.getElementsByClassName 
+            4. Tương tác thông qua css selector 
+                document.querySelectorAll 
+        </pre>
+    </section>
+    <section id="zone2">
+        <div>
+            <label for="txt">Nhập:</label>
+            <input type="text" name="txt" id="txt">
+        </div>
+        <button onclick="fn_ById()">GetById</button>
+        <div id="ketQua">Kết quả:</div>
+    </section>
+    <script>
+        // 1. tương tác thông qua thuộc tính id
+        const fn_ById = ()=>{
+            // lấy giá trị của input
+            let gtri = document.getElementById("txt").value;
+
+            // gán giá trị cho phần tử
+            document.getElementById("ketQua").innerHTML="<h2>"+gtri +"</h2>";
+
+            // tô màu cho zone2
+            document.getElementById("zone2").style.backgroundColor='green';
+        }
+    </script>
+     <!-- 2. Tương tác thông qua tên thẻ HTML  -->
+    <section id="zone3">
+        <!-- <form action=""> -->
+            <div>
+                <label for="noiDung">Nhập nội dung</label>
+                <input type="text" name="noiDung" id="noiDung">
+                <br>
+                <input type="text" name="nd2" id="nd2">
+            </div>
+            <button onclick="fn_ByTagName()"> Click ByTagName</button>
+            <div id="kqNoiDung"></div>
+        <!-- </form> -->
+    </section>
+    <script>
+        const fn_ByTagName = ()=>{
+            // lấy giá trị của phần tử thông qua tên thẻ
+            let elems = document.getElementsByTagName("input");
+            console.log(elems);
+            let nd = document.getElementsByTagName("input")[1].value;
+            console.log(nd);
+            // gán giá trị vào kqNoiDung
+            document.getElementById("kqNoiDung").innerText=nd;
+        }
+    </script>
+
+    <!-- 3. Tương tác thông qua thuộc tính class của phẩn tử HTML  -->
+    <section id="zone3">
+        <div class="nd-1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto totam vitae neque sapiente ratione doloribus, facere facilis laboriosam dolorem! Nulla perspiciatis nam dolor vitae autem quos impedit commodi laudantium pariatur?</p>
+        </div>
+        <button onclick="fn_ByClassName()">Click ByClassName</button>
+        <div class="ket-qua">
+
+        </div>
+    </section>
+    <script>
+        // 3. Tương tác thông qua thuộc tính class của phẩn tử HTML
+        const fn_ByClassName = ()=>{
+            // lấy giá trị nội dung thông qua thuộc tính class
+            let gt = document.getElementsByClassName("nd-1")[0].innerText;
+            // gán giá trị
+            document.getElementsByClassName("ket-qua")[0].innerHTML ="<h3>" + gt + "</h3>";
+            document.getElementsByClassName("ket-qua")[0].style.color="Blue";
+        }
+    </script>
+     <!-- 4. Tương tác thông qua css selector  -->
+     <section id="zone4">
+        <div class="nd-1">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Iusto totam vitae neque sapiente ratione doloribus</p>
+        </div>
+        <div class="nd-2">
+            <p>Đoạn nội dung 2</p>
+            <p>Đoạn nội dung 3</p>
+        </div>
+        
+        <button onclick="fn_querySelector()">Click querySelectorAll</button>
+        
+        <div class="ket-qua"></div>
+
+     </section>
+     <script>
+        // 4. Tương tác thông qua css selector
+        const fn_querySelector=()=>{
+            // lấy giá trị trên nd-1
+            // let nd = document.getElementsByClassName("nd-1")[0].innerText;
+            // console.log("noidung",nd);
+            let nd = document.querySelectorAll("#zone4 .nd-1");
+            console.log(nd[0].innerText);
+            //ketqua
+            // document.getElementsByClassName("ket-qua")[0].innerText=nd;
+            document.querySelectorAll("#zone4 .ket-qua")[0].innerHTML=nd[0].innerText;
+        }
+     </script>
+</body>
+</html>

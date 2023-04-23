@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký thành viên</title>
+    <link rel="stylesheet" href="css/dang-ky.css">
+</head>
+<body>
+    <section id="form-dk">
+        <form action="" method="post">
+            <h1>Đăng ký thành viên</h1>
+            <div class="form-group">
+                <label for="hoTen">Họ tên</label>
+                <div>
+                    <input class="form-control" 
+                        type="text" 
+                        name="hoTen" id="hoTen"
+                        onchange=" fn_CheckInput(this)"
+                        onfocus=" fn_CheckInput(this)">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tenDangNhap">Tên đăng nhập</label>
+                <div>
+                    <input class="form-control" type="text" name="tenDangNhap" id="tenDangNhap" onchange=" fn_CheckInput(this)">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="matKhau">Mật khẩu</label>
+                <div>
+                    <input class="form-control" type="password" name="matKhau" id="matKhau">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="anhDaiDien">Ảnh đại diện</label>
+                <div>
+                    <input type="file" name="anhDaiDien" id="anhDaiDien">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="thuDienTu">Thư điện tử</label>
+                <div>
+                    <input class="form-control" type="email" name="thuDienTu" id="thuDienTu">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gioiTinh">Giới tính</label>
+                <div>
+                    <input type="radio" name="gioiTinh" id="gtNam" checked> 
+                    <label for="gtNam">Nam</label>
+                    <input type="radio" name="gioiTinh" id="gtNu" checked> 
+                    <label for="gtNu">Nữ</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="soThich">Sở thích</label>
+                <div style="display: block; ">
+                    <input type="checkbox" name="soThich" id="stBongDa"> 
+                    <label for="stBongDa">Bóng đá</label>
+                    <input type="checkbox" name="soThich" id="stXemPhim"> 
+                    <label for="stXemPhim">Xem phim</label>
+                    <br>
+                    <input type="checkbox" name="soThich" id="stDuLich">  
+                    <label for="stDuLich">Du lịch</label>
+                    <input type="checkbox" name="soThich" id="stBoi"> 
+                    <label for="stBoi">Bơi</label>
+                    <input type="checkbox" name="soThich" id="stNgheNhac"> 
+                    <label for="stNgheNhac">Nghe nhạc</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="queQuan">Quê quán</label>
+                <div>
+                    <select class="form-control"  name="queQuan" id="queQuan">
+                        <option value="">--Chọn tỉnh--</option>
+                        <option value="1">Hà nội</option>
+                        <option value="2">Tp. HCM</option>
+                        <option value="3">Đà nẵng</option>
+                        <option value="4">Hải phòng</option>
+                        <option value="5">Cần thơ</option>
+                    </select>
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="diaChi">Địa chỉ</label>
+                <div>
+                    <input class="form-control"  type="text" name="diaChi" id="diaChi">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dienThoai">Điện thoại</label>
+                <div>
+                    <input class="form-control"  type="tel" name="dienThoai" id="dienThoai">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="moTa">Mô tả ngắn</label>
+                <div>
+                    <textarea name="moTa" id="moTa" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for=""></label>
+                <div>
+                    <input type="submit" 
+                        value="Đăng ký" 
+                        name="btnDangKy" id="btnDangKy" 
+                        class="btn btn-primary"
+                        onclick="return fn_CheckRegister()">
+                    <input type="reset" value="Làm lại" name="btnLamLai" id="btnLamLai" class="btn btn-secondary">
+                </div>
+            </div>
+        </form>
+
+    </section>
+    <section id="zone2">
+        <h1>DANH SÁCH THÀNH VIÊN</h1>
+        <table border="1px" width="80%" align="center">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Họ và tên</th>
+                    <th>Giới tính</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Chức năng</th>
+                </tr>
+            </thead>
+            <tbody id="dataMember">
+                <tr>
+                    <td>1</td>
+                    <td>Chung Chung</td>
+                    <td>Nam</td>
+                    <td>chungtrinhj@gmail.com</td>
+                    <td>0978611889</td>
+                    <td align="center">
+                        <button>Xem</button>
+                        <button>Sửa</button>
+                        <button>Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script src="js/dangKy.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/loadData.js"></script>
+    <script>
+        loadDataMemner();
+    </script>
+</body>
+</html>
