@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download jquery từ trang chủ về để sử dụng</title>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Download jquery từ trang chủ về để sử dụng</h1>
+    </section>
+
+
+    <!-- Nhứng thư viện jquery -->
+    <script src="js/jquery-3.6.4.min.js"></script>
+    
+    <!-- Sử dụng  -->
+    <script>
+        $(document).ready(function(){ 
+            // đảm bảo các phần tử trên trang đã được sẵn sàng
+            console.log("Ready....");
+            let val = $("h1").text();
+            console.log(val);
+        });
+    </script>
+</body>
+</html>

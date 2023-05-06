@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xử lý sự kiện trong jquery</title>
+    <style>
+        .success{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Xử lý sự kiện trong jquery</h1>
+    </section>
+    <section id="zone2">
+        <button id="btn1">Click</button>
+        <button id="btn2">Toggle</button>
+        <div style="margin:2rem;width: 10rem; height: 10rem; background: yellow;">
+
+        </div>
+        <div style="margin:2rem;width: 10rem; height: 10rem; background: blue;">
+
+        </div>
+    </section>
+    <section id="zone3">
+        <form action="" style="margin:2rem;padding:2rem; background: #ccc;">
+            <div class="form-control">
+                <label for="userName">UserName</label>
+                <div>
+                    <input type="text" name="userName" id="userName">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+
+    <!-- Nhúng trực tiếp từ cloud  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Sử dụng  -->
+    <script>
+        $().ready(function(){
+            //  sự kiện chuột: click, mouse..., toggle
+            $("#btn1").click(function(){
+                alert($(this).text())
+            })
+            $("#btn2").click(function(){
+                $("#btn2+div").toggle(1000);
+            })
+
+            //Sự kiện bàn phím
+            // $("#userName").keydown(function(){
+            //     $("#userName+span").text($(this).val());
+            // });
+            $("#userName").keyup(function(){
+                $("#userName+span").text($(this).val());
+            });
+
+            $("#userName").focus(function(){
+                $(this).css({
+                    border:"5px solid green",
+                    background:"yellow",
+                    outline:"none"
+                })
+            });
+            $("#userName").blur(function(){
+                $(this).css({
+                    border:"1px solid #000",
+                    background:"#fff",
+                    outline:"none"
+                })
+            });
+            // onchange
+            $("#userName").change(function(){
+                let val = $(this).val().trim();
+                if(val==""){
+                    $(this).siblings("span")
+                        .text("Bạn phải nhập dữ liệu")
+                        .css({
+                            color:"red"
+                        })
+                }else{
+                    $(this).siblings("span")
+                        .text("OK")
+                        .addClass("success")
+                }
+            });
+        });
+    </script>
+</body>
+</html>

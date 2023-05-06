@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiệu ứng trong jquery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            text-align: center;
+            position: relative;
+        }
+        #box1 p{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%); 
+        }
+    </style>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Hiệu ứng trong jquery</h1>
+    </section>
+    <section id="zone2">
+        <button id="height">Animate - height</button>
+        <button id="width">Animate - Width</button>
+        <button id="reset">Animate - Reset</button>
+        <div id="box1" class="box1">
+            <p>Box1</p>
+        </div>
+    </section>
+    <section id="zone3">
+        <p>Demonstrate fadeToggle() with different speed parameters.</p>
+
+        <button>Click to fade in/out boxes</button><br><br>
+
+        <div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+        <br>
+        <div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+        <br>
+        <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+    </section>
+
+     <!-- Nhúng trực tiếp từ cloud  -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+     <!-- Sử dụng  -->
+     <script>
+        $().ready(function(){
+            $("#height").click(function(){
+                $("#box1").animate({
+                    height: "300px"
+                },3000)
+                $("#box1 p").css({
+                    transform:"rotate(45deg)"
+                })
+            });
+            $("#width").click(function(){
+                $("#box1").animate({
+                    width: "300px"
+                },2000)
+            });
+            $("#reset").click(function(){
+                $("#box1").removeAttr("style");
+            });
+
+
+            $("#zone3 button").click(function(){
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(3000);
+            });
+        });
+     </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhúng thư viện jquery từ cloud</title>
+</head>
+<body>
+    <section id="zone1">
+        <h1>Nhúng thư viện jquery từ cloud</h1>
+    </section>
+
+
+    <!-- Nhúng trực tiếp từ cloud  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Sử dụng(test) -->
+    <script>
+        $(document).ready(function(){
+            console.log("Ready....");
+            console.log($("h1").text());
+        });
+    </script>
+</body>
+</html>

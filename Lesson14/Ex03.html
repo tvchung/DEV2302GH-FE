@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Selector</title>
+</head>
+<body>
+    <section id="zone1">
+        <h1>HTML Selector</h1>
+    </section>
+    <section id="zone2">
+        <p>
+            1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit unde consectetur adipisci, qui sequi illo ut reprehenderit dolorum quod ratione perferendis iste dolore neque eius porro accusantium repudiandae odio optio!
+        </p>
+    </section>
+    <section id="zone3">
+        <div class="content">
+            <p>2. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, modi reiciendis. Minus nostrum veritatis, magni, itaque nemo consequuntur est voluptas totam provident tempore animi nihil pariatur neque eveniet qui a?</p>
+        </div>
+    </section>
+    <section id="zone4" class="form">
+        <form action="">
+            <div class="form-control">
+                <label for="userName">UserName</label>
+                <div>
+                    <input type="text" name="userName" id="userName">
+                    <span class="error">(*)</span>
+                </div>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+    </section>
+
+    <!-- Nhúng trực tiếp từ cloud  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Sử dụng(test) -->
+    <script>
+        $(document).ready(function(){
+            console.log("Ready....");
+            // Html selecter
+            // lấy giá trị nội dung của thẻ p
+            console.log("Nội dung h1:", $("h1").text());
+            console.log($("p").text());
+
+            // truy cập đến html thông qua id
+            let content = $("#zone3").text();
+            console.log("Text zone3:",content);
+            content = $("#zone3").html();
+            console.log("html zone3:",content);
+
+            // Truy cập thông qua thuộc tính class
+            content = $(".content").text();
+            console.log(".content-:",content);
+            content = $(".content").html();
+            console.log("html .content-:",content);
+
+            $('.content').css("color","red");
+            $('.content').css({
+                background:"yellow",
+                color:"blue",
+                "font-size":"2rem"
+            });
+
+            // Truy cập thông qua cú pháp css selector
+            content = $(".content p").html(); // lấy nội dung của thẻ p trong phần tử có thuộc tính class là .content
+            console.log(".content p", content);
+
+            // form selector
+            // $(":input[type='text']").val("Nhập nội dung....");
+            $("input:text").val("Mời bạn nhập...");
+
+            $("input:submit").click(function(){
+                alert($(this).val());
+                alert($("input:text").val());
+            })
+
+        });
+    </script>
+</body>
+</html>
