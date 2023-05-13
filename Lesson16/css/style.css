@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    font-size: 16px;
+}
+#zone1{
+    background-color: #ccc;
+    min-height: 1000px;
+}
+.container{
+    margin: 1rem 10%;
+    padding: 2rem .5rem;
+    background-color: #fff;
+}
+.row{
+    display: flex;
+}
+.col-7{
+    width: 60%;
+}
+.col-5{
+    width: 40%;
+}
+.table{
+    width: 100%;
+}
+.table-bordered {
+    border: 1px solid #000;
+}
+.table tr td, .table tr th {
+    margin: 0 !important;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    padding: .5rem .25rem;
+}
+.form-search {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+.btn {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: .25rem 1rem;
+} 
+.form {
+    padding-left: 2rem;
+}
+.form-group {
+    display: flex;
+    margin: .5rem 0;
+}
+.form-group label {
+    display: inline-block;
+    width: 25%;
+}
+.form-group >div {
+    width: 70%;
+}
+.form-control {
+    width: 100%;
+    padding: .25rem .5rem;
+    border-radius: 0;
+    border: 1px solid #ccc;
+}
+.btn-primary {
+    background-color: greenyellow;
+}
+.btn-search{
+    background-color: #ae2a2a;
+}
+.btn-red{
+    background-color: #ae2a2a;
+}
+.btn-orange{
+    background-color: orange;
+}
+.btn-cyan{
+    background-color: cyan;
+}
+.btn-hide {
+    display: none;
+}
+.btn-show {
+    display: block;
+}

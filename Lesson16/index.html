@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sinh viên</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section id="zone1">
+      <h1>HỆ THỐNG QUẢN LÝ SINH VIÊN</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-7">
+            <!-- tìm kiếm -->
+            <div class="form-search">
+              <label for="keyword">Nhập tên tìm kiếm</label>
+              <input type="search" name="keyword" id="keyword" />
+              <input type="button" value="Tìm" id="btnSearch" class="btn btn-search" />
+            </div>
+            <div class="list-sinh-vien">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Mã sinh viên</th>
+                    <th>Họ và tên</th>
+                    <th>Tuổi</th>
+                    <th>Giới tính</th>
+                    <th>Chức năng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="form">
+                <div class="form-group">
+                    <label for="studentId">Mã sinh viên</label>
+                    <div>
+                        <input type="text" class="form-control"  id="studentId" name="studentId">
+                        <span class="error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="studentName">Họ và tên</label>
+                    <div>
+                        <input type="text" class="form-control"  id="studentName" name="studentName">
+                        <span class="error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Tuổi</label>
+                    <div>
+                        <input type="number" class="form-control"  id="age" name="age">
+                        <span class="error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Giới tính</label>
+                    <div>
+                        <select name="sex" id="sex" class="form-control">
+                            <option value="1">Nam</option>
+                            <option value="0">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthDate">Ngày sinh</label>
+                    <div>
+                        <input type="datetime-local" class="form-control" id="birthDate" name="birthDate">
+                        <span class="error"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthPlace">Nơi sinh</label>
+                    <div>
+                        <select name="birthPlace" id="birthPlace" class="form-control">
+                            <option value="HN">Tp. Hà nội</option>
+                            <option value="HCM">Tp. Hồ chí minh</option>
+                            <option value="HP">Tp. Hải phòng</option>
+                            <option value="QN">Quản ninh</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Địa chỉ</label>
+                    <div>
+                        <input type="text"  id="address" name="address" class="form-control">
+                        <span class="error"></span>
+                    </div>
+                </div>
+
+                <input type="button" id="btnSave" class="btn btn-primary btn-hide" value="Save">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- nhúng jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- Nhúng mockdata -->
+    <script src="js/data.js"></script>
+    <!-- xử lý các chức năng trên trang  -->
+    <script>
+      $().ready(function () {
+        // các hàm xử lý
+        const fn_LoadData = (data)=>{
+            let row=``;
+            $(".list-sinh-vien tbody").html('');
+            data.map((item,index)=>{
+                console.log(item);
+                row += `<tr>
+                    <td>${index+1}</td>
+                    <td>${item.studentId}</td>
+                    <td>${item.studentName}</td>
+                    <td>${item.age}</td>
+                    <td>${item.sex}</td>
+                    <td>
+                      <button class="btn btn-red" onclick="fn_Show('${item.studentId}','show')">Xem</button>
+                      <button class="btn btn-orange" onclick="fn_Show('${item.studentId}','edit')">Sửa</button>
+                      <button class="btn btn-cyan">Xóa</button>
+                    </td>
+                  </tr>`;
+            });
+
+            $(".list-sinh-vien tbody").html(row);
+
+           
+        }
+
+        // load data sinh viên
+        fn_LoadData(students);
+
+       
+       
+      });
+       //  xử lý sự kiện xem
+      const fn_Show =(studentId,actionName)=>{
+        console.log(studentId);
+        // tim trong mảng sinh viên cần xem
+        let student = students.filter(x=>x.studentId == studentId)[0];
+        console.log(student);
+        console.log(student.studentId);
+        // hiển thị lên form
+        $("#studentId").val(student.studentId)
+        $("#studentName").val(student.studentName)
+        $("#age").val(student.age)
+        $("#sex").val(student.sex)
+        $("#birthDate").val(student.birthDate)
+        $("#birthPlace").val(student.birthPlace)
+        $("#address").val(student.address)
+
+        if(actionName=='edit'){
+            $("#btnSave").removeClass('btn-hide').addClass('btn-show');
+        }
+        if(actionName=='show'){
+            $("#btnSave").removeClass('btn-show').addClass('btn-hide');
+        }
+    }
+    </script>
+  </body>
+</html>
