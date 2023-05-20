@@ -72,7 +72,7 @@
                 <div class="form-group">
                     <label for="birthDate">Ngày sinh</label>
                     <div>
-                        <input type="datetime-local" class="form-control" id="birthDate" name="birthDate">
+                        <input type="datetime" class="form-control" id="birthDate" name="birthDate">
                         <span class="error"></span>
                     </div>
                 </div>
@@ -122,8 +122,8 @@
                     <td>${item.age}</td>
                     <td>${item.sex}</td>
                     <td>
-                      <button class="btn btn-red" onclick="fn_Show('${item.studentId}','show')">Xem</button>
-                      <button class="btn btn-orange" onclick="fn_Show('${item.studentId}','edit')">Sửa</button>
+                      <button class="btn btn-red" onclick="fn_ViewEdit('${item.studentId}','show')">Xem</button>
+                      <button class="btn btn-orange" onclick="fn_ViewEdit('${item.studentId}','edit')">Sửa</button>
                       <button class="btn btn-cyan">Xóa</button>
                     </td>
                   </tr>`;
@@ -141,21 +141,24 @@
        
       });
        //  xử lý sự kiện xem
-      const fn_Show =(studentId,actionName)=>{
+      const fn_ViewEdit =(studentId,actionName)=>{
         console.log(studentId);
         // tim trong mảng sinh viên cần xem
         let student = students.filter(x=>x.studentId == studentId)[0];
         console.log(student);
         console.log(student.studentId);
         // hiển thị lên form
-        $("#studentId").val(student.studentId)
-        $("#studentName").val(student.studentName)
-        $("#age").val(student.age)
-        $("#sex").val(student.sex)
-        $("#birthDate").val(student.birthDate)
-        $("#birthPlace").val(student.birthPlace)
-        $("#address").val(student.address)
-
+        // $("#studentId").val(student.studentId)
+        // $("#studentName").val(student.studentName)
+        // $("#age").val(student.age)
+        // $("#sex").val(student.sex)
+        // $("#birthDate").val(student.birthDate)
+        // $("#birthPlace").val(student.birthPlace)
+        // $("#address").val(student.address)
+      
+        for (const [key, value] of Object.entries(student)) {
+                $('#'+key).val(value)
+        }
         if(actionName=='edit'){
             $("#btnSave").removeClass('btn-hide').addClass('btn-show');
         }
